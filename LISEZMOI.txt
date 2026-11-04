@@ -1,0 +1,13 @@
+Drone Service CI - site prêt pour Vercel
+
+Option la plus simple (sans GitHub) :
+1. Installe Node.js (nodejs.org) si ce n'est pas déjà fait.
+2. Dézippe ce dossier, ouvre un terminal dedans.
+3. Tape :  npx vercel --prod
+4. Connecte-toi avec ton compte Vercel, accepte les questions par défaut.
+   Framework : "Other". Pas de commande de build.
+Vercel te donne l'adresse du site à la fin (ex. drone-service-ci.vercel.app).
+
+Option GitHub :
+1. Crée un dépôt GitHub et envoie-y le contenu de ce dossier.
+2. Sur vercel.com > Add New > Project > importe le dépôt > Deploy.
