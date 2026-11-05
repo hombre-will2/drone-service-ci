@@ -1,13 +1,10 @@
 Drone Service CI - site prêt pour Vercel
 
-Avis clients (stockage Supabase) :
-1. Crée un projet sur supabase.com.
-2. Dans le SQL Editor Supabase, exécute le fichier supabase/reviews.sql.
-3. Dans les paramètres du projet Vercel > Settings > Environment Variables,
-   ajoute SUPABASE_URL (URL du projet) et SUPABASE_PUBLISHABLE_KEY
-   (clé publique/publishable du projet). SUPABASE_ANON_KEY est aussi accepté.
-   Ne mets jamais une clé service_role dans le site ou dans GitHub.
-4. Redéploie le projet Vercel. Les avis envoyés avec l'autorisation de publication
+Avis clients (stockage Neon) :
+1. Dans Vercel > Storage, crée une base Neon gratuite et associe-la au projet.
+   L'intégration fournit DATABASE_URL à la fonction serverless.
+2. Dans le SQL Editor Neon, exécute le fichier neon/reviews.sql.
+3. Redéploie le projet Vercel. Les avis envoyés avec l'autorisation de publication
    apparaissent immédiatement sur le site.
 
 Déploiement manuel :
@@ -15,8 +12,9 @@ Déploiement manuel :
 2. Ouvre un terminal dans ce dossier et lance : npx vercel --prod
 3. Connecte-toi à Vercel si demandé. Choisis le framework "Other", sans commande de build.
    La fonction api/reviews.js est automatiquement déployée avec le site.
+   Configure DATABASE_URL dans l'environnement Vercel si Neon n'est pas connecté.
 
 Option GitHub :
 1. Connecte le dépôt GitHub à Vercel (Framework "Other", sans commande de build).
 2. Chaque mise à jour poussée sur main déclenche un déploiement.
-3. Vérifie que SUPABASE_URL et SUPABASE_PUBLISHABLE_KEY sont configurées dans Vercel.
+3. Vérifie que DATABASE_URL est configurée dans Vercel.
